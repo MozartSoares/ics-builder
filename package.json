@@ -1,0 +1,48 @@
+{
+  "name": "ics-builder",
+  "version": "1.0.0",
+  "description": "A simple, flexible ICS (iCalendar) builder for Node.js.",
+  "author": "Mozart Soares",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup --silent"
+  },
+  "tsup": {
+    "entry": [
+      "./src/index.ts"
+    ],
+    "clean": true,
+    "dts": true,
+    "format": [
+      "esm"
+    ]
+  },
+  "typesVersions": {
+    "*": {
+      "": [
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "typescript": "./src/index.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "ical-generator": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.3",
+    "tsup": "^8.3.6",
+    "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}
